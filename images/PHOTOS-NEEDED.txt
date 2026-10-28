@@ -6,13 +6,17 @@ Original full-size files from the school are kept in the
 "school-media-originals" folder next to the website (not uploaded).
 
 ALREADY ON THE SITE
-  campus-office.jpg     Home slideshow, School Life gallery
+  campus-flag.jpg       Home slideshow, gallery
+  pupils-lineup.jpg     Home slideshow, gallery (shown full width)
+  play-ball.jpg         Home slideshow, gallery
+  play-compound.jpg     Home slideshow, gallery
   class-young.jpg       Home slideshow, Pre-Primary, gallery
   girls-uniform.jpg     Home slideshow, gallery
   class-lower.jpg       Home slideshow, Academics (Primary), gallery
   class-upper.jpg       Home slideshow, Home (Primary card), gallery
-  campus-gate.jpg       Home slideshow, gallery
+  campus-gate.jpg       Gallery
   pupils-compound.jpg   Gallery
+  campus-office.jpg     (spare, not used at the moment)
   founders.jpg          Home + About
   videos/campus-tour.mp4      Home ("A walk around the school")
   videos/pupils-outside.mp4   School Life ("Space to run around")
@@ -27,6 +31,18 @@ ADDING MORE SLIDESHOW PHOTOS
   Copy one of the <figure class="slide"> lines in index.html and change
   the file name, description and caption. It picks up the new slide
   automatically and keeps changing every 5 seconds.
+  Photos of any shape work: the whole photo is always shown, so nobody
+  at the edge of a group photo gets cut off.
+
+NO CROPPING IN THE GALLERY
+  The School Life gallery keeps every photo at its own shape. Add
+  class="photo span-all" to a wide group photo to show it across the
+  full width, like pupils-lineup.jpg.
+
+ORGANISATION CHART
+  The "How the school is organised" chart on the About page is built in
+  the page itself (about.html, section id="leadership"), not an image.
+  To change a name or title, edit the text there.
 
 Tip: resize photos to about 1600px wide before adding them so pages load fast.
 

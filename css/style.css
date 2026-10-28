@@ -237,23 +237,32 @@ p { margin: 0 0 1em; }
 .photo.wide { aspect-ratio: 16 / 9; }
 .photo.portrait { aspect-ratio: 3 / 4; max-width: 440px; width: 100%; margin: 0 auto; }
 .photo.portrait img { object-position: center 20%; }
+/* Full photo at its own shape, never cropped (used for wide group photos) */
+.photo.full { aspect-ratio: auto; background: none; }
+.photo.full img { height: auto; display: block; }
+.photo.full figcaption { position: static; background: none; color: var(--muted); padding: 10px 2px 0; }
 
 /* ---------- Home slideshow (auto-advances, see main.js) ---------- */
 .slideshow {
   position: relative; overflow: hidden;
   border-radius: var(--radius); background: #2a1415;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 3;
 }
 .slide {
   position: absolute; inset: 0; margin: 0;
   opacity: 0; transition: opacity 1.1s ease;
 }
 .slide.is-active { opacity: 1; z-index: 1; }
-.slide img {
-  width: 100%; height: 100%; object-fit: cover;
-  transform: scale(1.06); transition: transform 6s ease-out;
+/* The whole photo is always shown (nobody gets cut off at the edges).
+   Any leftover space is filled with a blurred copy of the same photo. */
+.slide::before {
+  content: ""; position: absolute; inset: -30px;
+  background: var(--bg) center / cover no-repeat;
+  filter: blur(22px) brightness(.75);
+  transform: scale(1.08); transition: transform 6s ease-out;
 }
-.slide.is-active img { transform: scale(1); }
+.slide.is-active::before { transform: scale(1); }
+.slide img { position: relative; width: 100%; height: 100%; object-fit: contain; }
 .slide figcaption {
   position: absolute; top: 16px; left: 16px;
   background: rgba(0,0,0,.5); color: #fff; font-size: .85rem; font-weight: 600;
@@ -268,7 +277,6 @@ p { margin: 0 0 1em; }
   border: 2px solid #fff; background: transparent;
 }
 .slide-dots button[aria-current="true"] { background: #fff; }
-@media (max-width: 900px) { .slideshow { aspect-ratio: 4 / 3; } }
 
 /* ---------- Videos (portrait phone clips) ---------- */
 .video-frame { margin: 0 auto; max-width: 340px; width: 100%; }
@@ -298,16 +306,17 @@ p { margin: 0 0 1em; }
 .hero-note { margin-top: 22px; font-size: .95rem; color: var(--muted); }
 .hero-note strong { color: var(--ink); }
 .hero-media { position: relative; }
+/* Sits under the slideshow, never on top of a photo */
 .hero-badge {
-  position: absolute; left: -22px; bottom: 28px; z-index: 3;
+  display: flex; align-items: center; gap: 14px; margin-top: 14px;
   background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow);
-  padding: 16px 20px; max-width: 250px; border-left: 4px solid var(--gold);
+  padding: 14px 20px; border-left: 4px solid var(--gold);
 }
 .hero-badge .big { font-family: var(--serif); font-size: 1.5rem; font-weight: 700; color: var(--brand-dark); line-height: 1.1; }
-.hero-badge span { display: block; font-size: .9rem; color: var(--muted); margin-top: 4px; }
+.hero-badge .big { flex: none; }
+.hero-badge span { display: block; font-size: .9rem; color: var(--muted); }
 @media (max-width: 900px) {
   .hero .grid-2 { grid-template-columns: 1fr; }
-  .hero-badge { position: static; max-width: none; margin-top: 14px; }
 }
 
 /* ---------- Stat strip ---------- */
@@ -536,11 +545,42 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .news-item p { color: var(--muted); }
 
 /* ---------- Gallery ---------- */
-.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-.gallery .photo:first-child { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
-@media (max-width: 760px) {
-  .gallery { grid-template-columns: 1fr 1fr; }
-  .gallery .photo:first-child { grid-column: auto; grid-row: auto; aspect-ratio: 4 / 3; }
+/* Photos keep their own shape (tall or wide), so nothing is cropped */
+.gallery { columns: 3 240px; column-gap: 14px; }
+.gallery .photo { aspect-ratio: auto; margin: 0 0 14px; break-inside: avoid; background: none; }
+.gallery .photo img { height: auto; display: block; }
+.gallery .photo.span-all { column-span: all; }
+@media (max-width: 560px) { .gallery { columns: 2; column-gap: 10px; } .gallery .photo { margin-bottom: 10px; } }
+
+/* ---------- Organisation chart (About page) ---------- */
+.org { --org-line: #c9a9ab; text-align: center; }
+.org-box {
+  display: inline-block; background: var(--white); border: 1px solid var(--line);
+  border-radius: 10px; padding: 12px 18px; min-width: 210px; max-width: 100%;
+  box-shadow: 0 1px 2px rgba(0,0,0,.04);
+}
+.org-box .title { display: block; font-size: .78rem; font-weight: 700; color: var(--brand); text-transform: uppercase; letter-spacing: .05em; }
+.org-box .who { display: block; font-family: "Lora", Georgia, serif; font-weight: 600; font-size: 1.05rem; margin-top: 2px; }
+.org-box.top { background: var(--brand); border-color: var(--brand); color: #fff; }
+.org-box.top .title { color: #f6d9a0; }
+.org-box.role { padding: 9px 16px; min-width: 0; }
+.org-box.role .title { color: var(--ink); text-transform: none; letter-spacing: 0; font-size: .95rem; font-weight: 600; }
+.org-line { width: 2px; height: 22px; background: var(--org-line); margin: 0 auto; }
+.org-depts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; position: relative; padding-top: 22px; }
+.org-depts::before { /* the bar joining the three departments */
+  content: ""; position: absolute; top: 0; left: calc(100% / 6); right: calc(100% / 6);
+  height: 2px; background: var(--org-line);
+}
+.org-dept { position: relative; display: flex; flex-direction: column; align-items: center; }
+.org-dept::before { content: ""; position: absolute; top: -22px; left: 50%; width: 2px; height: 22px; background: var(--org-line); }
+.org-dept .org-box { width: 100%; }
+.org-dept .org-box.role { width: auto; }
+.org-masters { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.org-dept-name { font-size: .8rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px; }
+@media (max-width: 860px) {
+  .org-depts { grid-template-columns: 1fr; gap: 30px; padding-top: 0; }
+  .org-depts::before, .org-dept::before { display: none; }
+  .org-dept { border-top: 2px solid var(--org-line); padding-top: 18px; }
 }
 
 /* ---------- Notice box ---------- */
@@ -584,6 +624,6 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .reveal.in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
-  .slide, .slide img { transition: none; transform: none; }
+  .slide, .slide::before { transition: none; transform: none; }
   .bar-fill, .stack span { transition: none; }
 }

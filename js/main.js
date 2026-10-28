@@ -18,6 +18,10 @@
   // Home page slideshow: next photo every 5 seconds, dots to jump
   document.querySelectorAll('.slideshow').forEach(function (show) {
     var slides = show.querySelectorAll('.slide');
+    slides.forEach(function (s) {
+      var img = s.querySelector('img');
+      if (img) s.style.setProperty('--bg', 'url("' + img.getAttribute('src') + '")');
+    });
     if (slides.length < 2) return;
     var delay = parseInt(show.dataset.interval, 10) || 5000;
     var current = 0, timer = null;
@@ -39,6 +43,9 @@
       current = (i + slides.length) % slides.length;
       slides[current].classList.add('is-active');
       dots.children[current].setAttribute('aria-current', 'true');
+      // start loading the next photo now, so it's ready when its turn comes
+      var next = slides[(current + 1) % slides.length].querySelector('img');
+      if (next) next.loading = 'eager';
     }
     function start() {
       clearInterval(timer);

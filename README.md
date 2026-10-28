@@ -9,7 +9,7 @@ It's a plain static site: HTML, one CSS file and one small JavaScript file. No b
 | File | Page |
 | --- | --- |
 | `index.html` | Home: photo slideshow, key numbers, results summary, video tour, news |
-| `about.html` | Founders, the "Ben + Sal = Bensal" name story, school facts |
+| `about.html` | Founders, the "Ben + Sal = Bensal" name story, organisation chart, school facts |
 | `academics.html` | Day care, pre-primary, primary, subjects |
 | `results.html` | NECTA PSLE and SFNA results, charts and tables |
 | `admissions.html` | How to apply, contacts, common questions |

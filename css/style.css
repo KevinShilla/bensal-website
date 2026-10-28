@@ -134,12 +134,12 @@ p { margin: 0 0 1em; }
   .brand img { width: 46px; height: 46px; }
   .brand-name { font-size: 1.04rem; white-space: nowrap; }
   .brand-sub { font-size: .6rem; letter-spacing: .07em; }
-  .nav-toggle { padding: 10px; }
+  .nav-toggle { padding: 10px; min-width: 46px; min-height: 46px; justify-content: center; align-items: center; }
   .nav-toggle-text { display: none; }
 }
 
 @media (max-width: 1040px) {
-  .nav-toggle { display: inline-flex; }
+  .nav-toggle { display: inline-flex; align-items: center; min-height: 44px; }
   .main-nav {
     position: absolute; left: 0; right: 0; top: 100%;
     background: var(--white); border-bottom: 1px solid var(--line);
@@ -269,14 +269,19 @@ p { margin: 0 0 1em; }
   padding: 5px 12px; border-radius: 99px;
 }
 .slide-dots {
-  position: absolute; right: 16px; bottom: 16px; z-index: 2;
-  display: flex; gap: 6px;
+  position: absolute; right: 8px; bottom: 6px; z-index: 2;
+  display: flex; gap: 0;
 }
+/* The button is a comfortable finger-sized target; the dot inside stays small */
 .slide-dots button {
-  width: 10px; height: 10px; padding: 0; border-radius: 50%; cursor: pointer;
-  border: 2px solid #fff; background: transparent;
+  width: 24px; height: 28px; padding: 0; cursor: pointer;
+  border: 0; background: none; display: grid; place-items: center;
 }
-.slide-dots button[aria-current="true"] { background: #fff; }
+.slide-dots button::before {
+  content: ""; width: 10px; height: 10px; border-radius: 50%;
+  border: 2px solid #fff; box-sizing: border-box; box-shadow: 0 0 3px rgba(0,0,0,.35);
+}
+.slide-dots button[aria-current="true"]::before { background: #fff; }
 
 /* ---------- Videos (portrait phone clips) ---------- */
 .video-frame { margin: 0 auto; max-width: 340px; width: 100%; }
@@ -479,6 +484,7 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 
 .logo-display { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; }
 .logo-display img { width: 100%; max-width: 300px; height: auto; margin: 0 auto; }
+@media (max-width: 560px) { .logo-display { padding: 18px; } .logo-display img { max-width: 180px; } }
 
 .quote {
   border-left: 4px solid var(--gold); padding: 6px 0 6px 22px; margin: 28px 0;
@@ -566,9 +572,10 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .org-box.role { padding: 9px 16px; min-width: 0; }
 .org-box.role .title { color: var(--ink); text-transform: none; letter-spacing: 0; font-size: .95rem; font-weight: 600; }
 .org-line { width: 2px; height: 22px; background: var(--org-line); margin: 0 auto; }
-.org-depts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; position: relative; padding-top: 22px; }
-.org-depts::before { /* the bar joining the three departments */
-  content: ""; position: absolute; top: 0; left: calc(100% / 6); right: calc(100% / 6);
+.org-depts { --gap: 18px; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap); position: relative; padding-top: 22px; }
+.org-depts::before { /* the bar joining the three departments, from the middle of the first to the middle of the last */
+  content: ""; position: absolute; top: 0;
+  left: calc((100% - 2 * var(--gap)) / 6); right: calc((100% - 2 * var(--gap)) / 6);
   height: 2px; background: var(--org-line);
 }
 .org-dept { position: relative; display: flex; flex-direction: column; align-items: center; }
@@ -577,10 +584,21 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .org-dept .org-box.role { width: auto; }
 .org-masters { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
 .org-dept-name { font-size: .8rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px; }
+/* Phones and tablets: the same tree as on a laptop, just more compact */
 @media (max-width: 860px) {
-  .org-depts { grid-template-columns: 1fr; gap: 30px; padding-top: 0; }
-  .org-depts::before, .org-dept::before { display: none; }
-  .org-dept { border-top: 2px solid var(--org-line); padding-top: 18px; }
+  .org-depts { --gap: 8px; }
+  .org-box { min-width: 0; padding: 8px 6px; border-radius: 8px; }
+  .org-box .title { font-size: .62rem; letter-spacing: .02em; }
+  .org-box .who { font-size: .82rem; line-height: 1.25; }
+  .org > .org-box { min-width: 200px; padding: 10px 16px; }
+  .org > .org-box .title { font-size: .7rem; }
+  .org > .org-box .who { font-size: .95rem; }
+  .org-box.role { padding: 7px 6px; }
+  .org-box.role .title { font-size: .76rem; line-height: 1.2; }
+  .org-dept .org-box.role { width: 100%; }
+  .org-dept-name { font-size: .62rem; letter-spacing: .04em; margin-bottom: 6px; }
+  .org-masters { flex-direction: column; gap: 6px; width: 100%; }
+  .org-line { height: 16px; }
 }
 
 /* ---------- Notice box ---------- */

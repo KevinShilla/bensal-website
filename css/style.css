@@ -460,6 +460,39 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 @media (max-width: 560px) { .facts div { grid-template-columns: 1fr; gap: 2px; } }
 
 /* "Ben" + "Sal" name story on the About page */
+
+
+/* ---------- Enrolment dates (Admissions) ---------- */
+.enrol-banner {
+  display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+  background: var(--brand); color: #fff; border-radius: var(--radius);
+  padding: 26px 30px; margin-bottom: 48px; border-left: 6px solid var(--gold);
+}
+.enrol-banner .eyebrow { color: #f6d9a0; }
+.enrol-banner h2 { color: #fff; margin: 4px 0 6px; }
+.enrol-banner p { margin: 0; color: rgba(255,255,255,.9); }
+.enrol-banner .btn { background: #fff; border-color: #fff; color: var(--brand) !important; }
+.enrol-banner .btn:hover { background: var(--gold); border-color: var(--gold); color: var(--ink) !important; }
+
+/* ---------- Mission, vision, values (About) ---------- */
+.mvv { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.mvv-values { grid-column: 1 / -1; }
+.mvv-card h3 { margin-top: 14px; }
+.mvv-card p:last-of-type { margin-bottom: 0; }
+.mvv-icon {
+  display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%;
+  background: var(--brand); color: #fff;
+}
+.mvv-icon svg { width: 28px; height: 28px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linejoin: round; }
+.mvv-icon svg .fill { fill: currentColor; }
+.value-chips { list-style: none; padding: 0; margin: 18px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.value-chips li {
+  background: var(--brand-soft); color: var(--brand-dark); font-weight: 700; font-size: .92rem;
+  padding: 7px 14px; border-radius: 99px; border: 1px solid #eccfd2;
+}
+.grid-cards { align-items: stretch; gap: 24px; }
+@media (max-width: 760px) { .mvv { grid-template-columns: 1fr; gap: 16px; } }
+
 .name-story {
   display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
   gap: 18px 22px; margin: 8px 0 28px;

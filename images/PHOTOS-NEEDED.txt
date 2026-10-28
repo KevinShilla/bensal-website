@@ -1,0 +1,38 @@
+PHOTOS FOR THE BENSAL WEBSITE
+=============================
+
+All website photos live in images/photos/. Videos live in videos/.
+Original full-size files from the school are kept in the
+"school-media-originals" folder next to the website (not uploaded).
+
+ALREADY ON THE SITE
+  campus-office.jpg     Home slideshow, School Life gallery
+  class-young.jpg       Home slideshow, Pre-Primary, gallery
+  girls-uniform.jpg     Home slideshow, gallery
+  class-lower.jpg       Home slideshow, Academics (Primary), gallery
+  class-upper.jpg       Home slideshow, Home (Primary card), gallery
+  campus-gate.jpg       Home slideshow, gallery
+  pupils-compound.jpg   Gallery
+  founders.jpg          Home + About
+  videos/campus-tour.mp4      Home ("A walk around the school")
+  videos/pupils-outside.mp4   School Life ("Space to run around")
+
+STILL NEEDED (save into images/photos/ with exactly these names)
+  daycare.jpg     Day care children (Home + Academics)
+  trip.jpg        An educational trip, e.g. the radio station visit (School Life)
+
+Until those two arrive, a light striped box shows in their place.
+
+ADDING MORE SLIDESHOW PHOTOS
+  Copy one of the <figure class="slide"> lines in index.html and change
+  the file name, description and caption. It picks up the new slide
+  automatically and keeps changing every 5 seconds.
+
+Tip: resize photos to about 1600px wide before adding them so pages load fast.
+
+LOGO AND TAB ICON (official round badge)
+  images/logo.png              About page
+  images/logo-small.png        header and footer
+  favicon.ico                  browser tab icon
+  images/favicon-32.png, favicon-192.png, apple-touch-icon.png
+                               tab icon / phone home-screen icon

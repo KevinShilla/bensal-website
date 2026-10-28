@@ -1,0 +1,14 @@
+# Operating system clutter
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Editors and tools
+.vscode/
+.idea/
+node_modules/
+
+# Full-size originals from the school stay off GitHub (too large);
+# only resized web copies in images/photos/ belong here
+*-original.*
+originals/

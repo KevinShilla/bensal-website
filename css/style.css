@@ -560,14 +560,16 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .contact-card .role { font-size: .82rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #a87708; }
 .contact-card .name { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; color: var(--brand-dark); }
 .contact-card .phone { font-size: 1.15rem; font-weight: 700; text-decoration: none; margin-top: 6px; overflow-wrap: anywhere; }
-.grid-4 .contact-card .phone { font-size: 1.02rem; }
-.grid-4 .contact-card { padding: 24px; }
-.contact-wide { grid-column: span 2; }
-.contact-people { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 24px; margin-top: 4px; }
-.contact-person { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
-@media (max-width: 520px) {
-  .contact-wide { grid-column: auto; }
-  .contact-people { grid-template-columns: 1fr; }
+.contact-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 360px)); justify-content: center; gap: 20px; }
+.contact-grid .contact-card { padding: 24px; }
+.contact-grid .contact-card .phone { font-size: 1.02rem; }
+.contact-person { display: flex; flex-direction: column; align-items: flex-start; }
+.contact-person + .contact-person { margin-top: 18px; padding-top: 18px; border-top: 1px dashed var(--line); }
+.contact-line { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 10px; }
+.contact-line .phone { margin-top: 0; white-space: nowrap; }
+.contact-person .btn { margin-top: 10px; }
+@media (max-width: 900px) {
+  .contact-grid { grid-template-columns: minmax(0, 480px); }
 }
 .contact-card .btn { margin-top: 14px; align-self: flex-start; }
 

@@ -23,14 +23,15 @@ ALREADY ON THE SITE
   pupils-compound.jpg   Gallery
   campus-office.jpg     (spare, not used at the moment)
   founders.jpg          Home + About
+  daycare.jpg           Day care (Home, Academics, Gallery)
+  school-building.jpg   Home slideshow, Contact, Gallery
   videos/campus-tour.mp4      Home ("A walk around the school")
   videos/pupils-outside.mp4   School Life ("Space to run around")
 
 STILL NEEDED (save into images/photos/ with exactly these names)
-  daycare.jpg     Day care children (Home + Academics)
   trip.jpg        An educational trip, e.g. the radio station visit (School Life)
 
-Until those two arrive, a light striped box shows in their place.
+Until it arrives, a light striped box shows in its place.
 
 ADDING MORE SLIDESHOW PHOTOS
   Copy one of the <figure class="slide"> lines in index.html and change

@@ -76,6 +76,21 @@ p { margin: 0 0 1em; }
 .topbar a:hover { text-decoration: underline; color: #fff; }
 .topbar-items { display: flex; gap: 22px; flex-wrap: wrap; }
 @media (max-width: 1000px) { .topbar .hide-md { display: none; } }
+/* On phones the top bar shows just the three phone numbers, evenly spaced */
+.topbar-phones { display: none; }
+@media (max-width: 560px) {
+  .topbar .container { justify-content: center; }
+  .topbar-items { justify-content: center; width: 100%; }
+  .topbar-phones { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; column-gap: 10px; row-gap: 2px; }
+  .topbar-phones a { font-weight: 600; white-space: nowrap; }
+  .topbar-phones a + a::before { content: "|"; color: #c99099; margin-right: 10px; font-weight: 400; }
+}
+@media (max-width: 400px) {
+  .topbar { font-size: .8rem; }
+  .topbar-phones { column-gap: 7px; }
+  .topbar-phones a + a::before { margin-right: 7px; }
+}
+@media (max-width: 350px) { .topbar-phones .label { display: none; } }
 
 /* ---------- Header / nav ---------- */
 .site-header {

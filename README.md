@@ -43,7 +43,7 @@ npx serve .
 
 **Change contact details.** The top bar, header and footer are repeated on every page, so search the whole folder for the old number or email and replace it everywhere.
 
-**Change colours.** Edit the variables at the top of `css/style.css`. The school red is `--brand: #991e20`, matched to the official logo.
+**Change colours.** Edit the variables at the top of `css/style.css`. The school colour is burgundy, `--brand: #7b1e34`, matched to the pupils' sweaters.
 
 ## Working together
 

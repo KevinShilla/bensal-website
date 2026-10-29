@@ -1,9 +1,9 @@
 /* Bensal Pre & Primary School — main stylesheet */
 
 :root {
-  --brand: #991e20;
-  --brand-dark: #6a1416;
-  --brand-soft: #f7e9eb;
+  --brand: #7b1e34;      /* burgundy, matched to the school sweaters */
+  --brand-dark: #561424;
+  --brand-soft: #f6e8ec;
   --gold: #e0a526;
   --gold-soft: #fbf1d9;
   --cream: #faf7f0;
@@ -228,9 +228,9 @@ p { margin: 0 0 1em; }
   position: relative;
   border-radius: var(--radius);
   overflow: hidden;
-  background-color: #efe2e3;
+  background-color: #f0e2e6;
   background-image:
-    repeating-linear-gradient(135deg, rgba(153,30,32,.06) 0 12px, transparent 12px 24px);
+    repeating-linear-gradient(135deg, rgba(123,30,52,.06) 0 12px, transparent 12px 24px);
   aspect-ratio: 4 / 3;
 }
 .photo.tall { aspect-ratio: 4 / 5; }
@@ -488,7 +488,7 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .value-chips { list-style: none; padding: 0; margin: 18px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
 .value-chips li {
   background: var(--brand-soft); color: var(--brand-dark); font-weight: 700; font-size: .92rem;
-  padding: 7px 14px; border-radius: 99px; border: 1px solid #eccfd2;
+  padding: 7px 14px; border-radius: 99px; border: 1px solid #e9cdd5;
 }
 .grid-cards { align-items: stretch; gap: 24px; }
 @media (max-width: 760px) { .mvv { grid-template-columns: 1fr; gap: 16px; } }

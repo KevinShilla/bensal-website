@@ -6,6 +6,11 @@ Original full-size files from the school are kept in the
 "school-media-originals" folder next to the website (not uploaded).
 
 ALREADY ON THE SITE
+  assembly.jpg          Home slideshow (first photo), gallery (full width)
+  assembly-2.jpg        Home slideshow, gallery
+  exam-time.jpg         Home slideshow, Home + Academics (Primary), gallery
+  library-choosing.jpg  Home slideshow, gallery
+  library-reading.jpg   Gallery
   campus-flag.jpg       Home slideshow, gallery
   pupils-lineup.jpg     Home slideshow, gallery (shown full width)
   play-ball.jpg         Home slideshow, gallery

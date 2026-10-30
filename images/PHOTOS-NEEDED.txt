@@ -25,9 +25,7 @@ ALREADY ON THE SITE
   founders.jpg          Home + About
   daycare.jpg           Day care (Home, Academics, Gallery)
   school-building.jpg   Home slideshow, Contact, Gallery
-  benedict.jpg          About (Executive Director)
   benedict-at-work.jpg  About (Executive Director)
-  benedict-in-office.jpg  About (Executive Director)
   videos/campus-tour.mp4      Home ("A walk around the school")
   videos/pupils-outside.mp4   School Life ("Space to run around")
 

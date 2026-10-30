@@ -520,12 +520,6 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .grid-cards { align-items: stretch; gap: 24px; }
 @media (max-width: 760px) { .mvv { grid-template-columns: 1fr; gap: 16px; } }
 
-.director-bio { max-width: 780px; }
-.director-bio p + p { margin-top: 12px; }
-@media (max-width: 560px) { .director-bio p { text-align: left; } }
-.director-photos { max-width: 1000px; margin: 0 auto; }
-.director-photo img { object-position: center 20%; }
-@media (max-width: 900px) { .director-photos { max-width: 440px; } }
 
 .logo-display { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; }
 .logo-display img { width: 100%; max-width: 300px; height: auto; margin: 0 auto; }

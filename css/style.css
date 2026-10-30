@@ -203,6 +203,8 @@ p { margin: 0 0 1em; }
 
 .section-head { max-width: 680px; margin-bottom: 40px; }
 .section-head p { color: var(--muted); font-size: 1.08rem; }
+.section-head-center { margin-left: auto; margin-right: auto; text-align: center; }
+.section-head-center .value-chips { justify-content: center; }
 .section-brand .section-head p { color: #ecc9ce; }
 .center { text-align: center; margin-left: auto; margin-right: auto; }
 
@@ -577,6 +579,7 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .contact-card .phone { font-size: 1.15rem; font-weight: 700; text-decoration: none; margin-top: 6px; overflow-wrap: anywhere; }
 .contact-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 360px)); justify-content: center; gap: 20px; }
 .contact-grid .contact-card { padding: 24px; }
+.contact-grid-2 { grid-template-columns: repeat(2, minmax(0, 360px)); }
 .contact-grid .contact-card .phone { font-size: 1.02rem; }
 .contact-person { display: flex; flex-direction: column; align-items: flex-start; }
 .contact-person + .contact-person { margin-top: 18px; padding-top: 18px; border-top: 1px dashed var(--line); }
@@ -584,7 +587,7 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .contact-line .phone { margin-top: 0; white-space: nowrap; }
 .contact-person .btn { margin-top: 10px; }
 @media (max-width: 900px) {
-  .contact-grid { grid-template-columns: minmax(0, 480px); }
+  .contact-grid, .contact-grid-2 { grid-template-columns: minmax(0, 480px); }
 }
 .contact-card .btn { margin-top: 14px; align-self: flex-start; }
 

@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261030g">
+  <link rel="stylesheet" href="css/style.css?v=20261030h">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -63,23 +63,51 @@
 
   <section class="section">
     <div class="container grid-2">
-      <figure class="video-frame">
+      <figure class="video-frame video-playlist">
         <video controls preload="none" playsinline poster="videos/pupils-outside-poster.jpg">
           <source src="videos/pupils-outside.mp4" type="video/mp4">
         </video>
         <figcaption>Pupils together in the school compound</figcaption>
+        <div class="clip-list" aria-label="Choose a video">
+          <button type="button" aria-current="true" data-src="videos/pupils-outside.mp4" data-poster="videos/pupils-outside-poster.jpg" data-caption="Pupils together in the school compound">1. In the compound</button>
+          <button type="button" data-src="videos/football-match.mp4" data-poster="videos/football-match-poster.jpg" data-caption="A football match on the school field" data-wide>2. Football match</button>
+        </div>
       </figure>
       <div>
         <span class="eyebrow">Sport &amp; play</span>
         <h2>Space to run around</h2>
         <p>Bensal has its own playground and football pitch. Break time is for playing, and football is a favourite with a lot of our pupils.</p>
-        <p>Outside lessons, the whole school often comes together in the compound, as you can see in the video.</p>
+        <p>Outside lessons, the whole school often comes together in the compound, as you can see in the first video. The second one shows a football match on our field, and it plays straight after the first.</p>
         <p>Our younger children have room to play safely too, which is an important part of the day in day care and pre-primary.</p>
       </div>
     </div>
   </section>
 
-  <section class="section section-white">
+  <section class="section section-white" id="sports">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">On the field</span>
+        <h2>Football, volleyball and team spirit</h2>
+        <p>Our pupils play football and volleyball on the school field. Teams in blue and yellow kits play against each other, while other pupils watch from the side of the field.</p>
+      </div>
+      <div class="sports-grid">
+        <figure class="photo sports-wide">
+          <img src="images/photos/teams-together.jpg" alt="Two Bensal football teams, one in blue kits and one in yellow, together on the school field" loading="lazy">
+          <figcaption>Our teams together on the school field</figcaption>
+        </figure>
+        <figure class="photo">
+          <img src="images/photos/football-team.jpg" alt="A Bensal football team in blue kits with their goalkeeper in green and a match ball" loading="lazy">
+          <figcaption>A team ready for the match, with the goalkeeper in green</figcaption>
+        </figure>
+        <figure class="photo">
+          <img src="images/photos/volleyball.jpg" alt="Two pupils jumping for the ball during a volleyball game beside the classroom block" loading="lazy">
+          <figcaption>Volleyball beside the classroom block</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
     <div class="container grid-2">
       <div>
         <span class="eyebrow">Beyond the classroom</span>
@@ -91,7 +119,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section section-white">
     <div class="container">
       <div class="section-head">
         <span class="eyebrow">Everyday Bensal</span>
@@ -114,7 +142,7 @@
     </div>
   </section>
 
-  <section class="section section-white" id="gallery">
+  <section class="section" id="gallery">
     <div class="container">
       <div class="section-head">
         <span class="eyebrow">Gallery</span>
@@ -136,6 +164,9 @@
         <figure class="photo"><img src="images/photos/class-lower.jpg" alt="Primary pupils with their books open in class" loading="lazy"></figure>
         <figure class="photo"><img src="images/photos/girls-uniform.jpg" alt="A group of Bensal pupils in school uniform" loading="lazy"></figure>
         <figure class="photo"><img src="images/photos/class-upper.jpg" alt="Older pupils writing at their desks" loading="lazy"></figure>
+        <figure class="photo"><img src="images/photos/teams-together-2.jpg" alt="Bensal football teams in blue and yellow kits together on the school field" loading="lazy"></figure>
+        <figure class="photo"><img src="images/photos/volleyball-2.jpg" alt="Pupils reaching for the ball in a volleyball game" loading="lazy"></figure>
+        <figure class="photo"><img src="images/photos/football-field.jpg" alt="Pupils playing football on the wide school field" loading="lazy"></figure>
       </div>
     </div>
   </section>
@@ -198,6 +229,6 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=20261030g"></script>
+<script src="js/main.js?v=20261030h"></script>
 </body>
 </html>

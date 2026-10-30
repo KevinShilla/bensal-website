@@ -26,8 +26,15 @@ ALREADY ON THE SITE
   daycare.jpg           Day care (Home, Academics, Gallery)
   school-building.jpg   Home slideshow, Contact, Gallery
   benedict-at-work.jpg  About (Executive Director)
+  teams-together.jpg    School Life (On the field)
+  football-team.jpg     School Life (On the field)
+  volleyball.jpg        School Life (On the field)
+  teams-together-2.jpg  Gallery
+  volleyball-2.jpg      Gallery
+  football-field.jpg    Gallery
   videos/campus-tour.mp4      Home ("A walk around the school")
-  videos/pupils-outside.mp4   School Life ("Space to run around")
+  videos/pupils-outside.mp4   School Life ("Space to run around"), first clip
+  videos/football-match.mp4   School Life ("Space to run around"), plays second
 
 STILL NEEDED (save into images/photos/ with exactly these names)
   trip.jpg        An educational trip, e.g. the radio station visit (School Life)

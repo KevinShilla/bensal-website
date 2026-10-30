@@ -55,6 +55,31 @@
     start();
   });
 
+  // School Life video: play the next clip when one ends, buttons to switch
+  document.querySelectorAll('.video-playlist').forEach(function (frame) {
+    var video = frame.querySelector('video');
+    var caption = frame.querySelector('figcaption');
+    var buttons = Array.prototype.slice.call(frame.querySelectorAll('.clip-list button'));
+    var current = 0;
+    function load(i, autoplay) {
+      var b = buttons[i];
+      current = i;
+      buttons.forEach(function (x) { x.setAttribute('aria-current', x === b ? 'true' : 'false'); });
+      frame.classList.toggle('wide', b.hasAttribute('data-wide'));
+      caption.textContent = b.dataset.caption;
+      video.poster = b.dataset.poster;
+      video.src = b.dataset.src;
+      if (autoplay) video.play().catch(function () {});
+    }
+    buttons.forEach(function (b, i) {
+      b.addEventListener('click', function () { load(i, true); });
+    });
+    video.addEventListener('ended', function () {
+      if (current < buttons.length - 1) load(current + 1, true);
+      else load(0, false);
+    });
+  });
+
   // Animate charts and fade sections in as they scroll into view
   function show(el) {
     el.classList.add('in');

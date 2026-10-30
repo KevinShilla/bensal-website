@@ -311,7 +311,7 @@ p { margin: 0 0 1em; }
 /* website credit (About page) */
 .credit { display: grid; grid-template-columns: 220px minmax(0, 560px); justify-content: center; align-items: center; gap: 40px; }
 .credit h2 { margin-bottom: 12px; }
-.credit .btn { margin-top: 6px; }
+.credit .btn-row { margin-top: 6px; }
 .credit-video { max-width: 220px; }
 @media (max-width: 760px) {
   .credit { grid-template-columns: 1fr; gap: 24px; }

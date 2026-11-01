@@ -565,6 +565,7 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 }
 .steps h3 { font-size: 1.12rem; margin-bottom: .25em; }
 .steps p { margin: 0; color: var(--muted); }
+.steps .step-btn { margin-top: 12px; }
 
 /* ---------- FAQ ---------- */
 .faq details { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: 10px; }

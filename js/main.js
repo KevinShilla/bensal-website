@@ -55,6 +55,23 @@
     start();
   });
 
+  // Announcement: show the next interview date, and hide it once the last date has passed
+  document.querySelectorAll('.notice[data-until]').forEach(function (notice) {
+    var p = notice.dataset.until.split('-');
+    var last = new Date(+p[0], +p[1] - 1, +p[2]);
+    var now = new Date();
+    var next = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    // the next Saturday; on a Saturday after 10am, the one after
+    next.setDate(next.getDate() + (6 - next.getDay()));
+    if (next.getTime() === new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime() && now.getHours() >= 10) {
+      next.setDate(next.getDate() + 7);
+    }
+    if (next > last) { notice.remove(); return; }
+    var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    notice.querySelector('.notice-next').textContent = (next.getTime() === last.getTime() ? 'Last interview day: ' : 'Next interview: ') +
+      'Saturday ' + next.getDate() + ' ' + months[next.getMonth()] + ', 8:00am.';
+  });
+
   // School Life video: play the next clip when one ends, buttons to switch
   document.querySelectorAll('.video-playlist').forEach(function (frame) {
     var video = frame.querySelector('video');

@@ -351,6 +351,17 @@ p { margin: 0 0 1em; }
 }
 
 /* ---------- Home hero ---------- */
+/* announcement strip (Home, Admissions) */
+.notice { background: var(--gold-soft); border-bottom: 1px solid #f0e0b5; }
+.notice-inner { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; padding-top: 14px; padding-bottom: 14px; }
+.notice-tag {
+  background: var(--brand); color: #fff; font-size: .72rem; font-weight: 700;
+  letter-spacing: .06em; text-transform: uppercase; padding: 4px 10px; border-radius: 99px;
+}
+.notice p { margin: 0; flex: 1 1 320px; font-size: .95rem; color: var(--ink); }
+.notice-next { display: block; color: var(--muted); }
+.notice-link { font-weight: 700; color: var(--brand); white-space: nowrap; }
+
 .hero { background: var(--white); padding: 64px 0 72px; border-bottom: 1px solid var(--line); }
 .hero .grid-2 { grid-template-columns: 1.05fr .95fr; }
 .hero p.lead { max-width: 540px; margin-bottom: 28px; }

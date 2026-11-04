@@ -652,6 +652,9 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .gallery .photo img { height: auto; display: block; }
 .gallery .photo.span-all { column-span: all; }
 @media (max-width: 560px) { .gallery { columns: 2; column-gap: 10px; } .gallery .photo { margin-bottom: 10px; } }
+.meal-gallery { columns: 2 280px; column-gap: 16px; }
+.meal-gallery .photo { margin-bottom: 16px; }
+@media (max-width: 560px) { .meal-gallery { columns: 1; } }
 
 /* ---------- Organisation chart (About page) ---------- */
 .org { --org-line: #c9a9ab; text-align: center; }
